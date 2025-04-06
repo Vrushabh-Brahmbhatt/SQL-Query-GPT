@@ -1,0 +1,212 @@
+<!-- settings.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - SQL Query Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <script defer src="/static/script.js"></script>
+    <script defer src="/static/settings.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-database"></i>
+                <h2>SQL Query<span>GPT</span></h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="/documentation"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li class="active"><a href="/settings"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Powered by OpenAI</p>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <header>
+                <h1>Settings</h1>
+            </header>
+
+            <div class="content-section settings">
+                <div class="settings-header">
+                    <h2>Application Settings</h2>
+                    <p>Customize your SQL Query GPT experience</p>
+                </div>
+
+                <div class="settings-sections">
+                    <!-- Appearance Section -->
+                    <div class="settings-section">
+                        <h3><i class="fas fa-paint-brush"></i> Appearance</h3>
+                        
+                        <div class="setting-item">
+                            <div class="setting-label">
+                                <h4>Theme</h4>
+                                <p>Choose between light and dark mode</p>
+                            </div>
+                            <div class="setting-control">
+                                <div class="theme-toggle">
+                                    <input type="checkbox" id="theme-toggle" class="toggle-checkbox">
+                                    <label for="theme-toggle" class="toggle-label">
+                                        <span class="toggle-inner"></span>
+                                        <span class="toggle-switch"></span>
+                                    </label>
+                                    <span id="theme-status">Light Mode</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-label">
+                                <h4>Font Size</h4>
+                                <p>Adjust the text size throughout the application</p>
+                            </div>
+                            <div class="setting-control">
+                                <div class="font-size-controls">
+                                    <button id="font-decrease" class="font-size-btn"><i class="fas fa-minus"></i></button>
+                                    <span id="font-size-display">Medium</span>
+                                    <button id="font-increase" class="font-size-btn"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Behavior Section -->
+                    <div class="settings-section">
+                        <h3><i class="fas fa-sliders-h"></i> Behavior</h3>
+                        
+                        <div class="setting-item">
+                            <div class="setting-label">
+                                <h4>Query Confirmation</h4>
+                                <p>Always ask for confirmation before executing generated queries</p>
+                            </div>
+                            <div class="setting-control">
+                                <div class="switch">
+                                    <input type="checkbox" id="query-confirm" class="toggle-checkbox" checked>
+                                    <label for="query-confirm" class="toggle-label">
+                                        <span class="toggle-inner"></span>
+                                        <span class="toggle-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-label">
+                                <h4>Chat Assistant</h4>
+                                <p>Show chat assistant button on all pages</p>
+                            </div>
+                            <div class="setting-control">
+                                <div class="switch">
+                                    <input type="checkbox" id="chat-always-show" class="toggle-checkbox" checked>
+                                    <label for="chat-always-show" class="toggle-label">
+                                        <span class="toggle-inner"></span>
+                                        <span class="toggle-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Language & Model Section -->
+                    <div class="settings-section">
+                        <h3><i class="fas fa-language"></i> Language & AI Model</h3>
+                        
+                        <div class="setting-item">
+                            <div class="setting-label">
+                                <h4>Language</h4>
+                                <p>Select your preferred language</p>
+                            </div>
+                            <div class="setting-control">
+                                <select id="language-select" class="settings-select">
+                                    <option value="en">English</option>
+                                    <option value="es">Español</option>
+                                    <option value="fr">Français</option>
+                                    <option value="de">Deutsch</option>
+                                    <option value="zh">中文</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-label">
+                                <h4>AI Model</h4>
+                                <p>Select which OpenAI model to use</p>
+                            </div>
+                            <div class="setting-control">
+                                <select id="model-select" class="settings-select">
+                                    <option value="gpt-3.5-turbo">GPT-3.5 Turbo </option>
+                                    <option value="gpt-4">GPT-4 (Premium)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- About Section -->
+                    <div class="settings-section">
+                        <h3><i class="fas fa-info-circle"></i> About</h3>
+                        
+                        <div class="about-info">
+                            <p><strong>SQL Query GPT</strong></p>
+                            <p>Version 1.0.0</p>
+                            <p>A natural language to SQL query generator powered by OpenAI.</p>
+                            <p>© 2024 SQL Query GPT</p>
+                        </div>
+                        
+                        <!-- <div class="button-group">
+                            <button class="settings-btn primary-btn">Check for Updates</button>
+                            <button class="settings-btn secondary-btn">View Licenses</button>
+                        </div> -->
+                    </div>
+                </div>
+                
+                <div class="settings-actions">
+                    <button id="save-settings" class="primary-btn">Save Settings</button>
+                    <button id="reset-settings" class="secondary-btn">Reset to Default</button>
+                </div>
+            </div>
+
+            <footer>
+                <p>&copy; 2024 SQL Query Generator | <a href="#">Terms</a> | <a href="#">Privacy</a></p>
+            </footer>
+        </div>
+    </div>
+    
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+    
+    <!-- Chatbot Widget (same as in index.html) -->
+    <button id="chatbot-toggle" class="chatbot-icon"><i class="fas fa-comments"></i></button>
+    
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-header">
+            <h3><i class="fas fa-robot"></i> SQL Assistant</h3>
+            <button id="close-chatbot"><i class="fas fa-times"></i></button>
+        </div>
+
+        <!-- Quick Action Buttons -->
+        <div id="quick-actions">
+            <button data-query="Show all databases"><i class="fas fa-database"></i> Databases</button>
+            <button data-query="Show tables in current database"><i class="fas fa-table"></i> Tables</button>
+            <button data-query="How to join tables in SQL"><i class="fas fa-question-circle"></i> Help</button>
+        </div>
+
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="bot">
+                👋 Hello! I'm your SQL assistant. How can I help you today?
+            </div>
+        </div>
+        
+        <form id="chatbot-form">
+            <input type="text" id="user-input" placeholder="Ask about SQL queries..." required />
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+</body>
+</html>

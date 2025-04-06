@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Query Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <script defer src="/static/script.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-database"></i>
+                <h2>SQL Query<span>GPT</span></h2>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="/documentation"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a href="/settings"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Powered by OpenAI</p>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <header>
+                <h1>SQL Query Generator</h1>
+                <!-- <div class="user-profile">
+                    <i class="fas fa-user-circle"></i>
+                </div> -->
+            </header>
+
+            <div class="content-section">
+                <div class="info-card">
+                    <h2>Welcome to SQL Query Generator</h2>
+                    <p>Generate SQL queries from natural language. Simply describe what you want to do with your database, and let AI create the queries for you.</p>
+                </div>
+
+                <div class="features">
+                    <div class="feature-card">
+                        <i class="fas fa-terminal"></i>
+                        <h3>CLI Interface</h3>
+                        <p>Use the command line interface for power users</p>
+                        <button id="open-cli-btn" class="feature-btn">Open CLI</button>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-comments"></i>
+                        <h3>Chat Assistant</h3>
+                        <p>Get SQL help through our chat <br> interface</p>
+                        <button id="open-chat-btn" class="feature-btn">Open Chat</button>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-file-code"></i>
+                        <h3>Query Templates</h3>
+                        <p>Common query patterns for quick reference</p>
+                        <button class="feature-btn">View Templates</button>
+                    </div>
+                </div>
+
+                <div class="quick-start">
+                    <h2>Quick Start Examples</h2>
+                    <div class="examples">
+                        <div class="example-card" data-query="Create a new table called employees with columns for id, name, department, and salary">
+                            <h4>Create a table</h4>
+                            <p>Create a new table for employees with ID, name, department and salary fields</p>
+                        </div>
+                        <div class="example-card" data-query="Insert five sample records into the employees table">
+                            <h4>Insert data</h4>
+                            <p>Add sample records to the employees table</p>
+                        </div>
+                        <div class="example-card" data-query="Select employees who earn more than 50000 and are in the marketing department">
+                            <h4>Query data</h4>
+                            <p>Find employees with specific criteria</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>&copy; 2024 SQL Query Generator | <a href="#">Terms</a> | <a href="#">Privacy</a></p>
+            </footer>
+        </div>
+    </div>
+
+    <button id="chatbot-toggle" class="chatbot-icon"><i class="fas fa-comments"></i></button>
+    
+    <!-- Chatbot Widget -->
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-header">
+            <h3><i class="fas fa-robot"></i> SQL Assistant</h3>
+            <button id="close-chatbot"><i class="fas fa-times"></i></button>
+        </div>
+
+        <!-- Quick Action Buttons -->
+        <div id="quick-actions">
+            <button data-query="Show all databases"><i class="fas fa-database"></i> Databases</button>
+            <button data-query="Show tables in current database"><i class="fas fa-table"></i> Tables</button>
+            <button data-query="How to join tables in SQL"><i class="fas fa-question-circle"></i> Help</button>
+        </div>
+
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="bot">
+                👋 Hello! I'm your SQL assistant. How can I help you today?
+            </div>
+        </div>
+        
+        <form id="chatbot-form">
+            <input type="text" id="user-input" placeholder="Ask about SQL queries..." required />
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+<!-- LinkedIn Post Content
+LinkedIn Post
+Title: Introducing SQL Query GPT - Natural Language to SQL Made Simple
+
+Excited to share my latest project: SQL Query GPT! 🚀
+This tool bridges the gap between natural language and SQL queries, allowing database interactions without needing to remember complex SQL syntax.
+✨ Key Features:
+
+Convert plain English to SQL with OpenAI's GPT
+Interactive CLI for power users
+Web interface with chat assistant for SQL help
+Seamless database management functionality
+
+The stack includes Flask for the backend, OpenAI API for query generation, and vanilla JavaScript with a modern UI for the frontend.
+Perfect for database beginners, data analysts who aren't SQL experts, or experienced developers looking to speed up their workflow.
+Check out the demo below! Feedback welcome in the comments.
+#DatabaseTools #NLP #OpenAI #WebDevelopment #Python #SQL
+
+For LinkedIn, I recommend including either:
+
+A short demo video (30-60 seconds) showing how you describe a query in English and how it generates the SQL
+Or a sequence of 3-4 screenshots showing:
+
+The main UI interface
+The chat interface with a natural language query
+The CLI with a generated SQL query being executed
+
+
+
+Resume Description
+SQL Query GPT - Natural Language to SQL Query Generator
+Developed a full-stack application that converts natural language descriptions into executable SQL queries using OpenAI's GPT models. Features include an intuitive web interface, CLI tool with colorized output, and an AI-powered chat assistant for SQL support.
+Tech Stack: Python, Flask, MySQL, JavaScript, OpenAI API, HTML/CSS
+Key Achievements:
+
+Implemented real-time query generation and execution system with comprehensive error handling
+Created responsive web interface with modern UI/UX principles
+Built a terminal-based tool that connects directly to MySQL databases for query execution
+Integrated OpenAI's API to translate natural language to accurate SQL syntax
+
+Detailed Project Explanation for Interviews
+Project Overview
+SQL Query GPT is a tool that allows users to generate SQL queries using natural language instructions. It combines a web interface and CLI tool that connects to MySQL databases, generates SQL from English descriptions using OpenAI's GPT models, and executes those queries—all in one integrated workflow.
+Architecture & Components
+1. Backend (Flask Application - open_cli.py)
+
+Purpose: Serves as the API layer between the frontend, CLI, and OpenAI's services
+Key Functions:
+
+Handles API requests from the web interface
+Communicates with OpenAI API to generate SQL queries
+Launches the CLI tool in a new terminal
+Provides chatbot functionality for SQL assistance
+
+
+Technologies: Flask, Python, OpenAI API
+
+2. CLI Tool (query.py)
+
+Purpose: Terminal-based interface for database interactions
+Key Functions:
+
+Connects to MySQL databases using user credentials
+Sends natural language descriptions to the Flask backend for SQL generation
+Executes generated SQL queries and displays formatted results
+Provides database management functionality (switching databases, viewing tables)
+
+
+Technologies: Python, mysql-connector, colorama (for terminal formatting)
+
+3. Frontend (index.html, script.js)
+
+Purpose: Web interface for users who prefer graphical interactions
+Key Functions:
+
+Provides example queries for quick starts
+Offers chatbot interface for SQL assistance
+Contains buttons to launch the CLI tool
+Features a modern, responsive design
+
+
+Technologies: HTML, CSS, JavaScript, Font Awesome
+
+Key Features in Detail
+Natural Language Processing
+
+The application uses OpenAI's GPT-3.5-turbo model to understand and translate natural language descriptions into valid SQL.
+The system prompt instructs the model to generate only valid SQL syntax without explanations.
+
+Database Interaction
+
+Direct connection to MySQL databases with secure credential handling
+Support for all major SQL operations (SELECT, CREATE, INSERT, UPDATE, DELETE)
+Interactive database selection and table viewing
+
+Dual Interface
+
+Web interface for beginners or those who prefer GUI
+CLI for power users and faster workflows
+Both interfaces connect to the same backend services
+
+Chat Assistant
+
+Provides SQL guidance and explanations
+Quick action buttons for common operations
+Code formatting for better readability
+
+Use Cases
+
+Educational Tool: Helps beginners learn SQL by showing the equivalent SQL for their natural language descriptions
+Productivity Tool: Accelerates database work for professionals who know what they want but don't want to look up specific syntax
+Cross-Team Collaboration: Allows non-technical team members to query databases without SQL knowledge
+Data Analysis: Enables analysts to quickly generate and execute SQL queries for data extraction
+
+Technical Challenges & Solutions
+Security Considerations
+
+Password input using getpass to hide sensitive information
+User confirmation required before executing generated queries
+Connection to local databases only (could be expanded with proper authentication)
+
+Error Handling
+
+Comprehensive error handling for database connections, query generation, and execution
+User-friendly error messages with color coding for visibility
+Graceful degradation when services aren't available
+
+Performance
+
+Asynchronous communication with the OpenAI API
+Efficient database query execution and result formatting
+Responsive UI with loading indicators
+
+Potential Interview Questions & Answers
+Q: How does the application ensure the generated SQL is safe to execute?
+A: The application shows the generated SQL to the user before execution and requires explicit confirmation. This provides a human validation layer. Additionally, the OpenAI model is prompted to generate only valid SQL syntax, reducing the risk of malformed queries.
+Q: How would you scale this application for an enterprise environment?
+A: For enterprise use, I would implement user authentication, role-based access controls for database operations, query logging for audit purposes, and potentially add a caching layer for commonly generated queries. I would also consider deploying the backend on a scalable cloud platform like AWS or Azure.
+Q: What improvements would you make given more time?
+A: I'd add features like query history storage, the ability to save favorite queries, more robust error handling with suggestions for fixes, support for additional database systems beyond MySQL, and possibly implement a fine-tuned model specifically for SQL generation.
+Q: How did you handle the potential for hallucinations or incorrect SQL generation?
+A: I set a low temperature (0.3) when calling the OpenAI API to reduce creativity and increase precision. The system also requires user confirmation before executing any query, allowing users to verify correctness. For future iterations, I'd implement a validation layer that checks SQL syntax before presenting it to the user.
+Q: How does this project demonstrate your full-stack development skills?
+A: This project showcases my ability to work across the entire stack—from frontend development with HTML/CSS/JavaScript, to backend API development with Flask, to system integration with databases and external APIs, all while maintaining security practices and creating a cohesive user experience. -->

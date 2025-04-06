@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - SQL Query Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <script defer src="/static/script.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-database"></i>
+                <h2>SQL Query<span>GPT</span></h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="active"><a href="/documentation"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a href="/settings"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Powered by OpenAI</p>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <header>
+                <h1>Documentation</h1>
+            </header>
+
+            <div class="content-section documentation">
+                <div class="documentation-header">
+                    <h2>SQL Query GPT Documentation</h2>
+                    <p>Learn how to use SQL Query GPT to transform natural language into SQL queries.</p>
+                </div>
+
+                <div class="documentation-toc">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#getting-started">Getting Started</a></li>
+                        <li><a href="#web-interface">Web Interface</a></li>
+                        <li><a href="#cli-tool">CLI Tool</a></li>
+                        <li><a href="#chat-assistant">Chat Assistant</a></li>
+                        <li><a href="#example-queries">Example Queries</a></li>
+                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                    </ul>
+                </div>
+
+                <div class="documentation-section" id="getting-started">
+                    <h3><i class="fas fa-rocket"></i> Getting Started</h3>
+                    <p>SQL Query GPT converts natural language into SQL queries using AI. Here's how to get started:</p>
+                    
+                    <h4>Prerequisites</h4>
+                    <ul>
+                        <li>MySQL installed and running on your system</li>
+                        <li>Python 3.7+ installed</li>
+                        <li>Required Python packages: Flask, OpenAI, mysql-connector-python, colorama</li>
+                    </ul>
+                    
+                    <h4>Installation</h4>
+                    <ol>
+                        <li>Clone the repository or download the source files</li>
+                        <li>Install required packages: <code>pip install flask openai mysql-connector-python colorama flask-cors</code></li>
+                        <li>Run the Flask server: <code>python open_cli.py</code></li>
+                        <li>Access the web interface at <code>http://127.0.0.1:5000</code></li>
+                    </ol>
+                </div>
+
+                <div class="documentation-section" id="web-interface">
+                    <h3><i class="fas fa-globe"></i> Web Interface</h3>
+                    <p>The web interface provides a user-friendly way to interact with SQL Query GPT.</p>
+                    
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li><strong>Quick Start Examples:</strong> Pre-defined query examples to get you started</li>
+                        <li><strong>Open CLI Button:</strong> Launch the command-line interface directly from the web</li>
+                        <li><strong>Chat Assistant:</strong> Get help with SQL through the interactive chat</li>
+                    </ul>
+                    
+                    <!-- <div class="documentation-image">
+                        <img src="/api/placeholder/800/400" alt="Web Interface Screenshot">
+                        <p class="caption">The SQL Query GPT web interface</p>
+                    </div> -->
+                </div>
+
+                <div class="documentation-section" id="cli-tool">
+                    <h3><i class="fas fa-terminal"></i> CLI Tool</h3>
+                    <p>The command-line interface allows for direct interaction with your MySQL databases.</p>
+                    
+                    <h4>Getting Connected</h4>
+                    <p>When you first launch the CLI, you'll be prompted to enter your MySQL credentials:</p>
+                    <pre class="code-block"><code>
+=== MySQL Connection Setup ===
+Enter MySQL host (default: localhost): 
+Enter MySQL username (default: root): 
+Enter MySQL password: 
+                    </code></pre>
+                    
+                    <h4>Available Commands</h4>
+                    <ul>
+                        <li><code>help</code>: Show help information</li>
+                        <li><code>show tables</code>: List all tables in the current database</li>
+                        <li><code>show databases</code>: List all available databases</li>
+                        <li><code>use [database]</code>: Switch to another database</li>
+                        <li><code>clear</code>: Clear the screen</li>
+                        <li><code>quit</code>: Exit the application</li>
+                    </ul>
+                    
+                    <h4>Generating Queries</h4>
+                    <p>To generate an SQL query, simply type a natural language description:</p>
+                    <pre class="code-block"><code>
+[mydatabase]> create a table for storing customer information with name, email, and phone number
+                    </code></pre>
+                    <p>The system will generate the corresponding SQL query and ask for confirmation before execution.</p>
+                </div>
+
+                <div class="documentation-section" id="chat-assistant">
+                    <h3><i class="fas fa-comments"></i> Chat Assistant</h3>
+                    <p>The chat assistant provides SQL help and guidance directly in the web interface.</p>
+                    
+                    <h4>Using the Chat Assistant</h4>
+                    <ul>
+                        <li>Click the chat icon in the bottom-right corner to open the chat</li>
+                        <li>Use quick action buttons for common operations</li>
+                        <li>Ask questions about SQL syntax, best practices, or specific queries</li>
+                    </ul>
+                    
+                    <h4>Example Questions</h4>
+                    <ul>
+                        <li>"How do I join two tables?"</li>
+                        <li>"What's the difference between INNER and LEFT JOIN?"</li>
+                        <li>"Can you explain SQL subqueries?"</li>
+                    </ul>
+                </div>
+
+                <div class="documentation-section" id="example-queries">
+                    <h3><i class="fas fa-list"></i> Example Queries</h3>
+                    <p>Here are some examples of natural language queries and their SQL equivalents:</p>
+                    
+                    <div class="example-query">
+                        <div class="query-natural">Show all customers who made a purchase in the last 30 days</div>
+                        <div class="query-sql">
+                            <pre><code>SELECT * FROM customers 
+WHERE customer_id IN (
+    SELECT DISTINCT customer_id FROM orders 
+    WHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+);</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="example-query">
+                        <div class="query-natural">Create a table for products with columns for ID, name, price, and category</div>
+                        <div class="query-sql">
+                            <pre><code>CREATE TABLE products (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    category VARCHAR(50)
+);</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="example-query">
+                        <div class="query-natural">Find the average order value per customer, ordered by highest spenders first</div>
+                        <div class="query-sql">
+                            <pre><code>SELECT c.customer_id, c.name, AVG(o.total_amount) as avg_order_value
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+GROUP BY c.customer_id, c.name
+ORDER BY avg_order_value DESC;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="documentation-section" id="troubleshooting">
+                    <h3><i class="fas fa-wrench"></i> Troubleshooting</h3>
+                    
+                    <h4>Common Issues</h4>
+                    <div class="troubleshooting-item">
+                        <h5>Cannot connect to MySQL</h5>
+                        <ul>
+                            <li>Verify MySQL is running on your system</li>
+                            <li>Check that your username and password are correct</li>
+                            <li>Ensure the host address is correct (usually localhost)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="troubleshooting-item">
+                        <h5>CLI doesn't open when clicking the button</h5>
+                        <ul>
+                            <li>Make sure the Flask server is running</li>
+                            <li>Check your browser's console for any errors</li>
+                            <li>Try running the CLI directly: <code>python query.py</code></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="troubleshooting-item">
+                        <h5>Generated SQL query has errors</h5>
+                        <ul>
+                            <li>Try rephrasing your natural language description</li>
+                            <li>Be more specific about table names and column names</li>
+                            <li>For complex queries, try breaking them down into simpler parts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>&copy; 2024 SQL Query Generator | <a href="#">Terms</a> | <a href="#">Privacy</a></p>
+            </footer>
+        </div>
+    </div>
+
+    <button id="chatbot-toggle" class="chatbot-icon"><i class="fas fa-comments"></i></button>
+    
+    <!-- Chatbot Widget (same as in index.html) -->
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-header">
+            <h3><i class="fas fa-robot"></i> SQL Assistant</h3>
+            <button id="close-chatbot"><i class="fas fa-times"></i></button>
+        </div>
+
+        <!-- Quick Action Buttons -->
+        <div id="quick-actions">
+            <button data-query="Show all databases"><i class="fas fa-database"></i> Databases</button>
+            <button data-query="Show tables in current database"><i class="fas fa-table"></i> Tables</button>
+            <button data-query="How to join tables in SQL"><i class="fas fa-question-circle"></i> Help</button>
+        </div>
+
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="bot">
+                👋 Hello! I'm your SQL assistant. How can I help you today?
+            </div>
+        </div>
+        
+        <form id="chatbot-form">
+            <input type="text" id="user-input" placeholder="Ask about SQL queries..." required />
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+</body>
+</html>
