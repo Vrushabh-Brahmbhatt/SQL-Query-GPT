@@ -35,20 +35,20 @@ Screenshots:
 ⚙️ Installation
 1. Clone this repository
 
-  git clone https://github.com/yourusername/sql-query-gpt.git
-  cd sql-query-gpt
+  `git clone https://github.com/yourusername/sql-query-gpt.git
+  cd sql-query-gpt`
 
 2. Install dependencies
 
-  pip install -r requirements.txt
+  `pip install -r requirements.txt`
 
 3. Create a .env file with your OpenAI API key
 
-  OPENAI_API_KEY=your_api_key_here
+  `OPENAI_API_KEY=your_api_key_here`
 
 4. Run the application
 
-  python open_cli.py
+  `python open_cli.py`
 
 💻 Usage:
 
@@ -62,7 +62,7 @@ Web Interface
 CLI Tool:
 1. Launch the CLI tool directly or from the web interface
 
-  python query.py
+  `python query.py`
 
 2. Connect to your database when prompted
 3. Enter your natural language description
